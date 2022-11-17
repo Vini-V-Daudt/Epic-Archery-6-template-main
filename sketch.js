@@ -5,7 +5,7 @@ const Constraint = Matter.Constraint;
 
 var engine, world;
 var canvas;
-var palyer, playerBase, playerArcher;
+var player, playerBase, playerArcher;
 var computer, computerBase, computerArcher;
 var playerArrows = [];
 var computerArrows = [];
@@ -186,6 +186,8 @@ function handlePlayerArrowCollision() {
       seja reduzida se a flecha do jogador atingir o alvo***/
       playerArcherLife -= 1;
       player.reduceLife(playerArcherLife);
+      computerArcherLife -= 1;
+      computer.reduceLife(playerArcherLife);
 
       if (computerArcherLife <= 0) {
         computerArcher.collapse = true;
